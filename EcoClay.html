@@ -1,0 +1,4213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoClay - Sustainable Living Through Traditional Clay Products</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<style>
+        :root {
+            /* Light Mode Variables */
+            --primary-color: #4CAF50;
+            --primary-hover: #45a049;
+            --text-color: #333;
+            --text-light: #666;
+            --bg-color: #f5f5f5;
+            --white: #ffffff;
+            --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        /* Performance Optimizations */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background: linear-gradient(135deg, var(--bg-color) 0%, #e0e0e0 100%);
+            background-attachment: fixed;
+            transition: var(--transition);
+        }
+
+        /* Enhanced Section Styles */
+        .section {
+            display: none;
+            padding: 40px 0;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            margin: 20px;
+            box-shadow: var(--shadow);
+            backdrop-filter: blur(10px);
+        }
+
+        .section.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Optimized About Us Section */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+            perspective: 1000px;
+        }
+
+        .stat-card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            transform-style: preserve-3d;
+            backface-visibility: hidden;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px) rotateX(5deg);
+        }
+
+        .stat-number {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Enhanced Help Section */
+        .help-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 30px;
+        }
+
+        .help-form {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .help-form:hover {
+            transform: translateY(-5px);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 1em;
+            transition: var(--transition);
+            background: var(--white);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: var(--primary-color);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.1);
+        }
+
+        .submit-button {
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 12px 30px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .submit-button:hover {
+            background: var(--primary-hover);
+            transform: translateY(-2px);
+        }
+
+        .submit-button::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.6s ease, height 0.6s ease;
+        }
+
+        .submit-button:hover::after {
+            width: 300px;
+            height: 300px;
+        }
+
+        /* Enhanced FAQ Section */
+        .faq-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .faq-item {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .faq-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 4px;
+            background: var(--primary-color);
+            transform: scaleY(0);
+            transition: var(--transition);
+        }
+
+        .faq-item:hover {
+            transform: translateX(5px);
+            box-shadow: var(--shadow);
+        }
+
+        .faq-item:hover::before {
+            transform: scaleY(1);
+        }
+
+        /* Responsive Optimizations */
+        @media (max-width: 768px) {
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .about-content,
+            .help-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stat-card {
+                padding: 20px;
+            }
+
+            .stat-number {
+                font-size: 2em;
+            }
+
+            .section {
+                margin: 10px;
+                padding: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .help-form,
+            .help-info {
+                padding: 20px;
+            }
+        }
+
+        /* Loading Optimization */
+        .lazy-load {
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .lazy-load.loaded {
+            opacity: 1;
+        }
+
+        /* Theme Toggle Button */
+        .theme-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1001;
+            background: var(--card-bg);
+            border: 2px solid var(--border-color);
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 10px var(--shadow-color);
+        }
+
+        .theme-toggle:hover {
+            transform: scale(1.1);
+        }
+
+        .theme-toggle i {
+            font-size: 24px;
+            color: var(--text-color);
+        }
+
+        /* Updated General Styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+            color: var(--text-color);
+            background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%);
+            background-attachment: fixed;
+            transition: all 0.3s ease;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    max-width: 1200px;
+            padding: 20px;
+        }
+
+        /* Transition Styles */
+        .transition-section {
+            display: none;
+            min-height: 100vh;
+    padding: 20px 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            opacity: 0;
+            transform: translateX(100%);
+            transition: all 0.5s ease-in-out;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.3);
+        }
+
+        .transition-section.active {
+            display: block;
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        #info {
+            background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)),
+                        url('https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+        }
+
+        #causes {
+            background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)),
+                        url('https://images.unsplash.com/photo-1621451537084-482c73073a0f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+        }
+
+        #login {
+            background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)),
+                        url('https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+        }
+
+        /* Content Animation */
+        .transition-section .container {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s ease-in-out;
+    text-align: center;
+            color: var(--text-color);
+            position: relative;
+            z-index: 1;
+        }
+
+        .transition-section.active .container {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Typography */
+        h1 {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            color: #2c3e50;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            font-weight: 700;
+        }
+
+        h2 {
+            font-size: 2.5em;
+            color: #2c3e50;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        h3 {
+            font-size: 1.8em;
+            color: #34495e;
+            margin-bottom: 20px;
+        }
+
+        /* Updated Content Styles */
+        .content {
+            background: rgba(255, 255, 255, 0.85);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin: 20px auto;
+            max-width: 800px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(76, 175, 80, 0.1), rgba(76, 175, 80, 0.05));
+            z-index: 0;
+        }
+
+        .content > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        .content ul {
+            list-style-type: none;
+            padding: 0;
+    margin: 0;
+        }
+
+        .content ul li {
+            margin: 15px 0;
+            padding-left: 30px;
+            position: relative;
+            font-size: 1.1em;
+            color: #34495e;
+        }
+
+        .content ul li:before {
+            content: "•";
+            color: #4CAF50;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+            font-size: 1.5em;
+        }
+
+        /* Login Styles */
+        .login-container {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .login-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(76, 175, 80, 0.1), rgba(76, 175, 80, 0.05));
+            z-index: 0;
+        }
+
+        .login-container > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        .login-tabs {
+            display: flex;
+            margin-bottom: 30px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .login-tab {
+            flex: 1;
+            padding: 15px;
+            text-align: center;
+            cursor: pointer;
+            background: #f8f9fa;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            color: #495057;
+        }
+
+        .login-tab:hover {
+            background: #e9ecef;
+        }
+
+        .login-tab.active {
+            background: #4CAF50;
+            color: white;
+        }
+
+        .login-tab.admin {
+            background: #ff9800;
+        }
+
+        .login-tab.admin.active {
+            background: #f57c00;
+        }
+
+        /* Form Styles */
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        form input {
+            background: rgba(255, 255, 255, 0.9);
+            border: 2px solid rgba(76, 175, 80, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            font-size: 1em;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
+        }
+
+        form input:focus {
+            border-color: #4CAF50;
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.1);
+            background: rgba(255, 255, 255, 1);
+        }
+
+        form button {
+            background: rgba(76, 175, 80, 0.9);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 12px 25px;
+            font-size: 1.1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            backdrop-filter: blur(5px);
+        }
+
+        form button:hover {
+            background: rgba(76, 175, 80, 1);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(76, 175, 80, 0.3);
+        }
+
+        /* Next Button Styles */
+        .next-button {
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            padding: 15px 35px;
+            background: rgba(76, 175, 80, 0.9);
+            color: white;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 1000;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .next-button:hover {
+            background: rgba(76, 175, 80, 1);
+            transform: scale(1.05) translateY(-2px);
+            box-shadow: 0 8px 25px rgba(76, 175, 80, 0.4);
+        }
+
+        /* Links */
+        a {
+            color: #4CAF50;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        a:hover {
+            color: #45a049;
+            text-decoration: underline;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                width: 95%;
+                padding: 10px;
+            }
+
+            h1 {
+    font-size: 2.5em;
+}
+
+            h2 {
+                font-size: 2em;
+            }
+
+            .content {
+                padding: 20px;
+            }
+
+            .login-container {
+                margin: 20px;
+                padding: 20px;
+            }
+        }
+
+        /* E-commerce Styles */
+        .ecommerce-header {
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
+
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .search-bar {
+            flex: 1;
+            max-width: 500px;
+            margin: 0 20px;
+            display: flex;
+        }
+
+        .search-bar input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px 0 0 4px;
+        }
+
+        .search-bar button {
+            padding: 10px 20px;
+            background: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 0 4px 4px 0;
+            cursor: pointer;
+        }
+
+        .user-actions {
+            display: flex;
+            gap: 20px;
+        }
+
+        .user-actions a {
+            color: #333;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        /* Navigation Styles */
+        .main-nav {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            margin: 20px;
+            padding: 15px 0;
+            width: calc(100% - 40px);
+        }
+
+        .main-nav ul {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+        .main-nav a {
+            color: #333;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1em;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .main-nav a:hover {
+            background: #4CAF50;
+            color: white;
+        }
+
+        /* Adjust main content margin since nav is no longer fixed */
+        .ecommerce-main {
+            margin-top: 20px;
+            padding: 20px 0;
+        }
+
+        .category-grid, .product-grid, .deals-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .category-card, .product-card, .deal-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .category-card:hover, .product-card:hover, .deal-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .category-card img, .product-card img, .deal-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .product-info, .deal-info {
+            padding: 15px;
+        }
+
+        .price {
+    font-size: 1.2em;
+            font-weight: bold;
+            color: #4CAF50;
+        }
+
+        .rating {
+            color: #ffc107;
+            margin: 5px 0;
+        }
+
+        .add-to-cart, .shop-now {
+            width: 100%;
+            padding: 10px;
+            background: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .add-to-cart:hover, .shop-now:hover {
+            background: #45a049;
+        }
+
+        .discount {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #ff4444;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 4px;
+        }
+
+        .ecommerce-footer {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            padding: 40px 0 20px;
+            margin-top: 40px;
+            border-radius: 15px 15px 0 0;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 20px;
+        }
+
+        .footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+        .footer-section ul li {
+            margin: 10px 0;
+}
+
+        .footer-section a {
+    color: white;
+    text-decoration: none;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-links a {
+            font-size: 1.5em;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Section Styles */
+.section {
+            display: none;
+            padding: 40px 0;
+        }
+
+        .section.active {
+            display: block;
+        }
+
+        /* Updated Background Styles */
+        .section {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            margin: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+        }
+
+        /* Hero Section Background */
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+                        url('https://img.freepik.com/premium-photo/clay-pots-plants-sandy-background_1282444-72561.jpg?w=1800') center/cover;
+            height: 80vh;
+            display: flex;
+            align-items: center;
+    text-align: center;
+            color: white;
+            border-radius: 0;
+            margin: 0;
+            box-shadow: none;
+        }
+
+        .hero-section h1 {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-section p {
+            font-size: 1.2em;
+    margin-bottom: 30px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Product Section Background */
+        #products {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(245, 245, 245, 0.95) 100%);
+        }
+
+        /* Deals Section Background */
+        #deals {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(240, 248, 255, 0.95) 100%);
+        }
+
+        /* About Section Background */
+        #about {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(245, 245, 245, 0.95) 100%);
+        }
+
+        /* Help Section Background */
+        #help {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(240, 248, 255, 0.95) 100%);
+        }
+
+        /* Navigation Bar Background */
+        .main-nav {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            margin: 20px;
+            padding: 15px 0;
+            width: calc(100% - 40px);
+        }
+
+        /* Footer Background */
+        .ecommerce-footer {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            padding: 40px 0 20px;
+            margin-top: 40px;
+            border-radius: 15px 15px 0 0;
+        }
+
+        /* Product Card Background */
+        .product-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            backdrop-filter: blur(5px);
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Modal Background */
+        .modal-content {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Form Backgrounds */
+        .login-container, .help-form {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Stats Card Background */
+        .stat-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(5px);
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* FAQ Item Background */
+        .faq-item {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(5px);
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Dark Mode Adjustments */
+        [data-theme="dark"] body {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+        }
+
+        [data-theme="dark"] .section {
+            background: rgba(30, 30, 30, 0.9);
+        }
+
+        [data-theme="dark"] .product-card,
+        [data-theme="dark"] .stat-card,
+        [data-theme="dark"] .faq-item {
+            background: rgba(30, 30, 30, 0.95);
+        }
+
+        [data-theme="dark"] .modal-content,
+        [data-theme="dark"] .login-container,
+        [data-theme="dark"] .help-form {
+            background: rgba(30, 30, 30, 0.98);
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .section {
+                margin: 10px;
+                padding: 20px;
+            }
+
+            .main-nav {
+                margin: 10px;
+                width: calc(100% - 20px);
+            }
+        }
+
+        /* Product Card Styles */
+        .product-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .product-image {
+            position: relative;
+            overflow: hidden;
+            height: 300px;
+            background: #f8f9fa;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .product-card:hover .product-image img {
+            transform: scale(1.05);
+        }
+
+        .product-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .product-card:hover .product-overlay {
+            opacity: 1;
+        }
+
+        .product-overlay button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            transform: translateY(20px);
+        }
+
+        .product-card:hover .product-overlay button {
+            transform: translateY(0);
+        }
+
+        .quick-view {
+            background: white;
+            color: #333;
+        }
+
+        .add-to-cart {
+            background: #4CAF50;
+            color: white;
+        }
+
+        .product-info {
+            padding: 20px;
+        }
+
+        .product-info h3 {
+            margin: 0 0 10px 0;
+            font-size: 1.2em;
+            color: #333;
+        }
+
+        .product-rating {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            margin-bottom: 10px;
+        }
+
+        .stars {
+            color: #ffc107;
+        }
+
+        .rating-count {
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        .product-price {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .current-price {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #4CAF50;
+        }
+
+        .original-price {
+            text-decoration: line-through;
+            color: #999;
+        }
+
+        .discount {
+            background: #ff4444;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 3px;
+            font-size: 0.9em;
+        }
+
+        .product-description {
+            color: #666;
+            font-size: 0.9em;
+            margin-bottom: 10px;
+        }
+
+        .product-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.9em;
+            color: #4CAF50;
+        }
+
+        @media (max-width: 768px) {
+.product-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            }
+        }
+
+        /* Featured Product Styles */
+        .product-card.featured {
+            border: 2px solid #4CAF50;
+            transform: scale(1.05);
+        }
+
+        .product-card.featured:hover {
+            transform: scale(1.05) translateY(-5px);
+        }
+
+        .bulk-pricing {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+
+        .bulk-pricing h4 {
+            color: #4CAF50;
+            margin: 0 0 10px 0;
+            font-size: 1.1em;
+        }
+
+        .bulk-pricing ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .bulk-pricing li {
+            color: #666;
+            margin: 5px 0;
+            font-size: 0.9em;
+        }
+
+        .quantity-selector {
+            margin: 15px 0;
+        }
+
+        .quantity-controls {
+    display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 5px;
+        }
+
+        .quantity-btn {
+            background: #4CAF50;
+            color: white;
+            border: none;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.2em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s ease;
+        }
+
+        .quantity-btn:hover {
+            background: #45a049;
+        }
+
+        #quantity {
+            width: 60px;
+    text-align: center;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 5px;
+        }
+
+        .total-price {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #4CAF50;
+            margin: 15px 0;
+        }
+
+        .unit {
+            font-size: 0.9em;
+            color: #666;
+            margin-left: 5px;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+    width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            overflow-y: auto;
+        }
+
+        .modal-content {
+            position: relative;
+            background: white;
+            margin: 50px auto;
+            padding: 20px;
+            width: 90%;
+            max-width: 1200px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .close-modal {
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            font-size: 30px;
+            cursor: pointer;
+    color: #666;
+}
+
+        .product-details {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 20px;
+        }
+
+        .product-gallery {
+            position: sticky;
+            top: 20px;
+        }
+
+        .main-image {
+            width: 100%;
+            height: 400px;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+
+        .main-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .thumbnail-gallery {
+    display: flex;
+            gap: 10px;
+            overflow-x: auto;
+            padding: 10px 0;
+        }
+
+        .thumbnail-gallery img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .thumbnail-gallery img:hover {
+            transform: scale(1.1);
+        }
+
+        .product-info-details {
+            padding: 20px;
+        }
+
+        .product-info-details h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .product-specifications,
+        .product-materials,
+        .product-care {
+            margin: 20px 0;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+
+        .product-specifications ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .product-specifications li {
+            margin: 10px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .product-specifications li:before {
+            content: "•";
+            color: #4CAF50;
+            position: absolute;
+            left: 0;
+        }
+
+        .share-product {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+
+        .share-buttons {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 10px;
+        }
+
+        .share-btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            transition: transform 0.3s ease;
+        }
+
+        .share-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .whatsapp {
+            background: #25D366;
+            color: white;
+        }
+
+        .facebook {
+            background: #1877F2;
+            color: white;
+        }
+
+        .twitter {
+            background: #1DA1F2;
+            color: white;
+        }
+
+        .copy-link {
+            background: #4CAF50;
+            color: white;
+        }
+
+        .add-to-cart-large {
+            width: 100%;
+            padding: 15px;
+            background: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1em;
+            font-weight: 600;
+            cursor: pointer;
+            margin: 20px 0;
+            transition: background 0.3s ease;
+        }
+
+        .add-to-cart-large:hover {
+            background: #45a049;
+        }
+
+        @media (max-width: 768px) {
+            .product-details {
+                grid-template-columns: 1fr;
+            }
+
+            .product-gallery {
+                position: static;
+            }
+        }
+
+        /* Logo Styles */
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.5em;
+    font-weight: bold;
+            color: #4CAF50;
+            text-decoration: none;
+        }
+
+        .logo i {
+            font-size: 2em;
+            color: #4CAF50;
+        }
+
+        /* Update Navigation to include logo */
+        .main-nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+        }
+
+        /* Profile Styles */
+        .profile-container {
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .profile-sidebar {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .profile-header {
+            text-align: center;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .profile-avatar {
+            font-size: 4em;
+            color: #4CAF50;
+            margin-bottom: 10px;
+        }
+
+        .profile-menu {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+
+        .profile-menu li {
+            padding: 12px 15px;
+            margin: 5px 0;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .profile-menu li:hover {
+            background: #f5f5f5;
+        }
+
+        .profile-menu li.active {
+            background: #4CAF50;
+            color: white;
+        }
+
+        .profile-content {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .profile-tab {
+            display: none;
+        }
+
+        .profile-tab.active {
+            display: block;
+        }
+
+        .profile-form, .settings-form {
+            max-width: 500px;
+        }
+
+        .form-group {
+    margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+
+        .form-group input {
+            width: 100%;
+    padding: 10px;
+            border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+        .save-btn {
+    background: #4CAF50;
+    color: white;
+    border: none;
+            padding: 12px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+            transition: background 0.3s ease;
+}
+
+        .save-btn:hover {
+    background: #45a049;
+}
+
+        /* Order History Styles */
+        .order-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .order-item {
+            border: 1px solid #eee;
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        .order-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .order-products {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .order-products img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+
+        .product-info h4 {
+            margin: 0 0 5px 0;
+        }
+
+        .order-status {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .status {
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 0.9em;
+        }
+
+        .status.delivered {
+            background: #e8f5e9;
+            color: #2e7d32;
+        }
+
+        .track-btn {
+            background: none;
+            border: 1px solid #4CAF50;
+            color: #4CAF50;
+            padding: 5px 15px;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .track-btn:hover {
+            background: #4CAF50;
+    color: white;
+        }
+
+        /* Address Styles */
+        .address-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .address-card {
+            border: 1px solid #eee;
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        .address-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .address-actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .address-actions button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: #666;
+        }
+
+        .address-actions button:hover {
+            color: #4CAF50;
+        }
+
+        .add-address-btn {
+            background: #f5f5f5;
+            border: 2px dashed #ddd;
+            border-radius: 10px;
+            padding: 20px;
+    text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .add-address-btn:hover {
+            background: #e9e9e9;
+            border-color: #4CAF50;
+        }
+
+        /* Settings Styles */
+        .checkbox-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .checkbox-group label {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .profile-container {
+                grid-template-columns: 1fr;
+            }
+
+            .profile-sidebar {
+                position: sticky;
+                top: 20px;
+            }
+        }
+
+        /* Deals Section Styles */
+        .deals-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin: 30px 0;
+        }
+
+        .deal-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            position: relative;
+        }
+
+        .deal-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .deal-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .deal-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .discount-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: #ff4444;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 1.1em;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .deal-info {
+            padding: 20px;
+        }
+
+        .deal-info h3 {
+            margin: 0 0 10px 0;
+            color: #333;
+            font-size: 1.3em;
+        }
+
+        .deal-info p {
+            color: #666;
+            margin: 0 0 15px 0;
+        }
+
+        .deal-timer {
+            background: #f8f9fa;
+            padding: 8px 15px;
+            border-radius: 20px;
+            display: inline-block;
+            color: #4CAF50;
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+
+        .shop-now {
+            width: 100%;
+            padding: 12px;
+            background: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .shop-now:hover {
+            background: #45a049;
+        }
+
+        /* Flash Sales Styles */
+        .flash-sales {
+    margin-top: 50px;
+            text-align: center;
+        }
+
+        .flash-sales h3 {
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        .countdown-timer {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .timer-item {
+            background: #4CAF50;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 10px;
+            min-width: 80px;
+        }
+
+        .timer-number {
+            display: block;
+            font-size: 2em;
+            font-weight: bold;
+            line-height: 1;
+        }
+
+        .timer-label {
+            font-size: 0.9em;
+            opacity: 0.9;
+        }
+
+        @media (max-width: 768px) {
+            .deals-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .countdown-timer {
+                flex-wrap: wrap;
+            }
+
+            .timer-item {
+                min-width: 60px;
+                padding: 10px 15px;
+            }
+
+            .timer-number {
+                font-size: 1.5em;
+            }
+        }
+
+        /* About Us Section Styles */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-number {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #4CAF50;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            color: #666;
+            font-size: 1.1em;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 50px;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+
+        .about-text p {
+            color: #666;
+            line-height: 1.8;
+            font-size: 1.1em;
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Help Section Styles */
+        .help-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 30px;
+        }
+
+        .help-form {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .help-form h3 {
+            color: #333;
+            margin-bottom: 25px;
+            font-size: 1.8em;
+        }
+
+        .help-form .form-group {
+            margin-bottom: 20px;
+        }
+
+        .help-form label {
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+            font-weight: 500;
+        }
+
+        .help-form input,
+        .help-form select,
+        .help-form textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1em;
+            transition: border-color 0.3s ease;
+        }
+
+        .help-form input:focus,
+        .help-form select:focus,
+        .help-form textarea:focus {
+            border-color: #4CAF50;
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.1);
+        }
+
+        .submit-button {
+            background: #4CAF50;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .submit-button:hover {
+            background: #45a049;
+            transform: translateY(-2px);
+        }
+
+        .help-info {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .help-info h3 {
+            color: #333;
+            margin-bottom: 25px;
+            font-size: 1.8em;
+        }
+
+        .faq-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .faq-item {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item:hover {
+            transform: translateX(5px);
+        }
+
+        .faq-item h4 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+
+        .faq-item p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .about-content,
+            .help-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stat-card {
+                padding: 20px;
+            }
+
+            .stat-number {
+                font-size: 2em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+}
+
+        /* Enhanced Login Styles */
+        .login-section {
+            max-width: 400px;
+            margin: 40px auto;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            transform: translateY(0);
+            transition: all 0.3s ease;
+        }
+
+        .login-section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .login-header {
+            text-align: center;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .login-header h2 {
+            color: var(--primary-color);
+            font-size: 2em;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .login-header p {
+            color: var(--text-light);
+            font-size: 1.1em;
+        }
+
+        .login-header::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 3px;
+            background: var(--primary-color);
+            border-radius: 3px;
+        }
+
+        .login-form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .form-group {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--text-color);
+            font-weight: 500;
+            font-size: 0.9em;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 1em;
+            transition: all 0.3s ease;
+            background: white;
+        }
+
+        .form-group input:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.1);
+            outline: none;
+        }
+
+        .form-group input:focus + label {
+            color: var(--primary-color);
+        }
+
+        .remember-forgot {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 15px 0;
+            font-size: 0.9em;
+        }
+
+        .remember-me {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-light);
+        }
+
+        .remember-me input[type="checkbox"] {
+            width: 16px;
+            height: 16px;
+            accent-color: var(--primary-color);
+        }
+
+        .forgot-password {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .forgot-password:hover {
+            color: var(--primary-hover);
+            text-decoration: underline;
+        }
+
+        .login-button {
+            background: var(--primary-color);
+            color: white;
+            padding: 14px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .login-button:hover {
+            background: var(--primary-hover);
+            transform: translateY(-2px);
+        }
+
+        .login-button::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.6s ease, height 0.6s ease;
+        }
+
+        .login-button:hover::after {
+            width: 300px;
+            height: 300px;
+        }
+
+        .social-login {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .social-login p {
+            color: var(--text-light);
+            margin-bottom: 15px;
+            position: relative;
+        }
+
+        .social-login p::before,
+        .social-login p::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            width: 45%;
+            height: 1px;
+            background: #e0e0e0;
+        }
+
+        .social-login p::before {
+            left: 0;
+        }
+
+        .social-login p::after {
+            right: 0;
+        }
+
+        .social-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .social-button {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid #e0e0e0;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .social-button:hover {
+            transform: translateY(-3px);
+            border-color: var(--primary-color);
+        }
+
+        .social-button i {
+            font-size: 1.2em;
+            color: var(--text-light);
+            transition: all 0.3s ease;
+        }
+
+        .social-button:hover i {
+            color: var(--primary-color);
+        }
+
+        .register-link {
+            text-align: center;
+            margin-top: 25px;
+            color: var(--text-light);
+        }
+
+        .register-link a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .register-link a:hover {
+            color: var(--primary-hover);
+            text-decoration: underline;
+        }
+
+        /* Error Message Styling */
+        .error-message {
+            background: #ffebee;
+            color: #c62828;
+            padding: 12px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            display: none;
+            animation: shake 0.5s ease;
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            75% { transform: translateX(5px); }
+        }
+
+        /* Loading State */
+        .login-button.loading {
+            position: relative;
+            color: transparent;
+        }
+
+        .login-button.loading::before {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: 2px solid white;
+            border-radius: 50%;
+            border-top-color: transparent;
+            animation: spin 0.8s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 480px) {
+            .login-section {
+                margin: 20px;
+                padding: 30px 20px;
+            }
+
+            .social-buttons {
+                flex-wrap: wrap;
+            }
+
+            .social-button {
+                width: 40px;
+                height: 40px;
+            }
+}
+</style>
+</head>
+<body>
+    <!-- Transition 1: Information Page -->
+    <section id="info" class="transition-section active">
+        <div class="container">
+            <h1>Welcome to Clay for Change</h1>
+            <p>Discover sustainable alternatives to plastic through traditional clay products.</p>
+        </div>
+    </section>
+
+    <!-- Transition 2: Causes and Solutions -->
+    <section id="causes" class="transition-section">
+        <div class="container">
+            <h2>Why Choose Clay Over Plastic?</h2>
+            <div class="content">
+                <h3>Environmental Impact of Plastic</h3>
+                <ul>
+                    <li>Non-biodegradable waste</li>
+                    <li>Ocean pollution</li>
+                    <li>Harmful to marine life</li>
+                    <li>Carbon footprint</li>
+            </ul>
+                <h3>Benefits of Clay Products</h3>
+                <ul>
+                    <li>100% biodegradable</li>
+                    <li>Natural and eco-friendly</li>
+                    <li>Traditional craftsmanship</li>
+                    <li>Thermal properties</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Transition 3: Login Page -->
+    <section id="login" class="transition-section">
+        <div class="login-container">
+            <div class="login-tabs">
+                <div class="login-tab active" onclick="switchTab('customer')">Customer</div>
+                <div class="login-tab admin" onclick="switchTab('admin')">Admin</div>
+            </div>
+            
+            <!-- Customer Login -->
+            <div id="customer-login">
+                <h3>Customer Login</h3>
+                <form onsubmit="return handleLogin('customer')">
+                    <input type="email" placeholder="Email" required>
+                    <input type="password" placeholder="Password" required>
+                    <button type="submit">Login</button>
+                    <p>Don't have an account? <a href="#" onclick="showRegister('customer')">Register</a></p>
+                </form>
+            </div>
+
+            <!-- Customer Registration -->
+            <div id="customer-register" style="display: none;">
+                <h3>Customer Registration</h3>
+                <form onsubmit="return handleRegister(event)">
+                    <input type="text" placeholder="First Name" required>
+                    <input type="text" placeholder="Last Name" required>
+                    <input type="date" placeholder="Date of Birth" required>
+                    <input type="tel" placeholder="Phone Number" required>
+                    <input type="email" placeholder="Email" required>
+                    <input type="password" placeholder="Create Password" required>
+                    <button type="submit">Register</button>
+                    <p>Already have an account? <a href="#" onclick="showLogin('customer')">Login</a></p>
+                </form>
+            </div>
+
+            <!-- Admin Login -->
+            <div id="admin-login" style="display: none;">
+                <h3>Admin Login</h3>
+                <form onsubmit="return handleLogin('admin')">
+                    <input type="email" placeholder="Admin Email" required>
+                    <input type="password" placeholder="Admin Password" required>
+                    <button type="submit">Login</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Website Content (Initially Hidden) -->
+    <div id="main-content" style="display: none;">
+        <!-- Navigation Bar -->
+        <nav class="main-nav">
+            <div class="container">
+                <a href="#home" class="logo" onclick="showSection('home')">
+                    <i class="fas fa-leaf"></i>
+                    EcoClay
+                </a>
+                <ul class="nav-links">
+                    <li><a href="#home" onclick="showSection('home')">Home</a></li>
+                    <li><a href="#products" onclick="showSection('products')">Products</a></li>
+                    <li><a href="#deals" onclick="showSection('deals')">Deals</a></li>
+                    <li><a href="#about" onclick="showSection('about')">About Us</a></li>
+                    <li><a href="#help" onclick="showSection('help')">Help</a></li>
+                    <li><a href="#profile" onclick="showSection('profile')"><i class="fas fa-user"></i> Profile</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Add Profile Section -->
+        <section id="profile" class="section">
+        <div class="container">
+                <h2>My Profile</h2>
+                <div class="profile-container">
+                    <div class="profile-sidebar">
+                        <div class="profile-header">
+                            <div class="profile-avatar">
+                                <i class="fas fa-user-circle"></i>
+                            </div>
+                            <h3>John Doe</h3>
+                            <p>Member since 2024</p>
+                        </div>
+                        <ul class="profile-menu">
+                            <li class="active" onclick="showProfileTab('details')">
+                                <i class="fas fa-user"></i> Personal Details
+                            </li>
+                            <li onclick="showProfileTab('orders')">
+                                <i class="fas fa-shopping-bag"></i> Order History
+                            </li>
+                            <li onclick="showProfileTab('addresses')">
+                                <i class="fas fa-map-marker-alt"></i> Addresses
+                            </li>
+                            <li onclick="showProfileTab('settings')">
+                                <i class="fas fa-cog"></i> Settings
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="profile-content">
+                        <!-- Personal Details Tab -->
+                        <div id="details-tab" class="profile-tab active">
+                            <h3>Personal Details</h3>
+                            <form class="profile-form">
+                                <div class="form-group">
+                                    <label>Full Name</label>
+                                    <input type="text" value="John Doe">
+                                </div>
+                                <div class="form-group">
+                                    <label>Email</label>
+                                    <input type="email" value="john.doe@example.com">
+                                </div>
+                                <div class="form-group">
+                                    <label>Phone Number</label>
+                                    <input type="tel" value="+91 98765 43210">
+                                </div>
+                                <div class="form-group">
+                                    <label>Date of Birth</label>
+                                    <input type="date" value="1990-01-01">
+                                </div>
+                                <button type="submit" class="save-btn">Save Changes</button>
+                            </form>
+                        </div>
+
+                        <!-- Order History Tab -->
+                        <div id="orders-tab" class="profile-tab">
+                            <h3>Order History</h3>
+                            <div class="order-list">
+                                <div class="order-item">
+                                    <div class="order-header">
+                                        <span class="order-id">Order #12345</span>
+                                        <span class="order-date">March 15, 2024</span>
+                                    </div>
+                                    <div class="order-details">
+                                        <div class="order-products">
+                                            <img src="https://th.bing.com/th/id/OIP.SLqjlu_mtaRyQKtp72iCgwHaIZ?rs=1&pid=ImgDetMain" alt="Clay Cup">
+                                            <div class="product-info">
+                                                <h4>Traditional Clay Teacup</h4>
+                                                <p>Quantity: 10</p>
+                                                <p>Price: ₹40</p>
+                                            </div>
+                                        </div>
+                                        <div class="order-status">
+                                            <span class="status delivered">Delivered</span>
+                                            <button class="track-btn">Track Order</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- More order items -->
+                            </div>
+                        </div>
+
+                        <!-- Addresses Tab -->
+                        <div id="addresses-tab" class="profile-tab">
+                            <h3>My Addresses</h3>
+                            <div class="address-list">
+                                <div class="address-card">
+                                    <div class="address-header">
+                                        <h4>Home</h4>
+                                        <div class="address-actions">
+                                            <button class="edit-btn"><i class="fas fa-edit"></i></button>
+                                            <button class="delete-btn"><i class="fas fa-trash"></i></button>
+                                        </div>
+                                    </div>
+                                    <p>123 Main Street</p>
+                                    <p>Apartment 4B</p>
+                                    <p>Mumbai, Maharashtra 400001</p>
+                                    <p>Phone: +91 98765 43210</p>
+                                </div>
+                                <button class="add-address-btn">Add New Address</button>
+                            </div>
+                        </div>
+
+                        <!-- Settings Tab -->
+                        <div id="settings-tab" class="profile-tab">
+                            <h3>Account Settings</h3>
+                            <form class="settings-form">
+                                <div class="form-group">
+                                    <label>Change Password</label>
+                                    <input type="password" placeholder="Current Password">
+                                </div>
+                                <div class="form-group">
+                                    <label>New Password</label>
+                                    <input type="password" placeholder="New Password">
+                                </div>
+                                <div class="form-group">
+                                    <label>Confirm New Password</label>
+                                    <input type="password" placeholder="Confirm New Password">
+                                </div>
+                                <div class="form-group">
+                                    <label>Email Notifications</label>
+                                    <div class="checkbox-group">
+                                        <label>
+                                            <input type="checkbox" checked> Order Updates
+                                        </label>
+                                        <label>
+                                            <input type="checkbox" checked> Promotions
+                                        </label>
+                                        <label>
+                                            <input type="checkbox"> Newsletter
+                                        </label>
+                                    </div>
+                                </div>
+                                <button type="submit" class="save-btn">Save Settings</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </section>
+
+        <style>
+            /* Profile Styles */
+            .profile-container {
+                display: grid;
+                grid-template-columns: 250px 1fr;
+                gap: 30px;
+                margin-top: 20px;
+            }
+
+            .profile-sidebar {
+                background: white;
+                border-radius: 10px;
+                padding: 20px;
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            }
+
+            .profile-header {
+                text-align: center;
+                padding-bottom: 20px;
+                border-bottom: 1px solid #eee;
+            }
+
+            .profile-avatar {
+                font-size: 4em;
+                color: #4CAF50;
+                margin-bottom: 10px;
+            }
+
+            .profile-menu {
+                list-style: none;
+                padding: 0;
+                margin: 20px 0;
+            }
+
+            .profile-menu li {
+                padding: 12px 15px;
+                margin: 5px 0;
+                border-radius: 5px;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+            }
+
+            .profile-menu li:hover {
+                background: #f5f5f5;
+            }
+
+            .profile-menu li.active {
+                background: #4CAF50;
+                color: white;
+            }
+
+            .profile-content {
+                background: white;
+                border-radius: 10px;
+                padding: 30px;
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            }
+
+            .profile-tab {
+                display: none;
+            }
+
+            .profile-tab.active {
+                display: block;
+            }
+
+            .profile-form, .settings-form {
+                max-width: 500px;
+            }
+
+            .form-group {
+                margin-bottom: 20px;
+            }
+
+            .form-group label {
+                display: block;
+                margin-bottom: 5px;
+                font-weight: 500;
+            }
+
+            .form-group input {
+                width: 100%;
+                padding: 10px;
+                border: 1px solid #ddd;
+                border-radius: 5px;
+            }
+
+            .save-btn {
+                background: #4CAF50;
+                color: white;
+                border: none;
+                padding: 12px 25px;
+                border-radius: 5px;
+                cursor: pointer;
+                transition: background 0.3s ease;
+            }
+
+            .save-btn:hover {
+                background: #45a049;
+            }
+
+            /* Order History Styles */
+            .order-list {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .order-item {
+                border: 1px solid #eee;
+                border-radius: 10px;
+                padding: 20px;
+            }
+
+            .order-header {
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 15px;
+                padding-bottom: 10px;
+                border-bottom: 1px solid #eee;
+            }
+
+            .order-products {
+                display: flex;
+                gap: 15px;
+                margin-bottom: 15px;
+            }
+
+            .order-products img {
+                width: 80px;
+                height: 80px;
+                object-fit: cover;
+                border-radius: 5px;
+            }
+
+            .product-info h4 {
+                margin: 0 0 5px 0;
+            }
+
+            .order-status {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .status {
+                padding: 5px 10px;
+                border-radius: 15px;
+                font-size: 0.9em;
+            }
+
+            .status.delivered {
+                background: #e8f5e9;
+                color: #2e7d32;
+            }
+
+            .track-btn {
+                background: none;
+                border: 1px solid #4CAF50;
+                color: #4CAF50;
+                padding: 5px 15px;
+                border-radius: 15px;
+                cursor: pointer;
+                transition: all 0.3s ease;
+            }
+
+            .track-btn:hover {
+                background: #4CAF50;
+                color: white;
+            }
+
+            /* Address Styles */
+            .address-list {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 20px;
+            }
+
+            .address-card {
+                border: 1px solid #eee;
+                border-radius: 10px;
+                padding: 20px;
+            }
+
+            .address-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 10px;
+            }
+
+            .address-actions {
+                display: flex;
+                gap: 10px;
+            }
+
+            .address-actions button {
+                background: none;
+                border: none;
+                cursor: pointer;
+                color: #666;
+            }
+
+            .address-actions button:hover {
+                color: #4CAF50;
+            }
+
+            .add-address-btn {
+                background: #f5f5f5;
+                border: 2px dashed #ddd;
+                border-radius: 10px;
+                padding: 20px;
+                text-align: center;
+                cursor: pointer;
+                transition: all 0.3s ease;
+            }
+
+            .add-address-btn:hover {
+                background: #e9e9e9;
+                border-color: #4CAF50;
+            }
+
+            /* Settings Styles */
+            .checkbox-group {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .checkbox-group label {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+            }
+
+            @media (max-width: 768px) {
+                .profile-container {
+                    grid-template-columns: 1fr;
+                }
+
+                .profile-sidebar {
+                    position: sticky;
+                    top: 20px;
+                }
+            }
+        </style>
+
+        <script>
+            function showProfileTab(tabName) {
+                // Hide all tabs
+                document.querySelectorAll('.profile-tab').forEach(tab => {
+                    tab.classList.remove('active');
+                });
+
+                // Remove active class from all menu items
+                document.querySelectorAll('.profile-menu li').forEach(item => {
+                    item.classList.remove('active');
+                });
+
+                // Show selected tab
+                document.getElementById(`${tabName}-tab`).classList.add('active');
+
+                // Add active class to selected menu item
+                event.currentTarget.classList.add('active');
+            }
+        </script>
+
+        <!-- Home Section -->
+        <section id="home" class="section active">
+            <div class="hero-section">
+        <div class="container">
+                    <h1>Welcome to EcoClay</h1>
+                    <p>Discover sustainable alternatives to plastic through traditional clay products.</p>
+                    <a href="#products" class="cta-button" onclick="showSection('products')">Explore Products</a>
+                </div>
+            </div>
+            <div class="featured-categories">
+                <div class="container">
+                    <h2>Featured Categories</h2>
+                    <div class="category-grid">
+                        <div class="category-card">
+                            <img src="https://th.bing.com/th/id/OIP.SLqjlu_mtaRyQKtp72iCgwHaIZ?rs=1&pid=ImgDetMain" alt="Clay Cups">
+                    <h3>Clay Cups</h3>
+                </div>
+                        <div class="category-card">
+                            <img src="https://th.bing.com/th/id/OIP.P6F2lStKrcG4QaaERpprygHaHa?w=1536&h=1536&rs=1&pid=ImgDetMain" alt="Clay Plates">
+                    <h3>Clay Plates</h3>
+                </div>
+                        <div class="category-card">
+                            <img src="https://www.terracottaworld.co.uk/wp-content/uploads/2021/01/DSC_1014-scaled.jpg" alt="Clay Bottles">
+                    <h3>Clay Bottles</h3>
+                        </div>
+                        <div class="category-card">
+                            <img src="https://st.hzcdn.com/simgs/f1f1e3bf0b370cc6_4-4477/home-design.jpg" alt="Clay Storage">
+                            <h3>Clay Storage</h3>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <!-- Products Section -->
+        <section id="products" class="section">
+        <div class="container">
+                <h2>Our Products</h2>
+                <div class="product-filters">
+                    <select id="category-filter">
+                        <option value="all">All Categories</option>
+                        <option value="cups">Clay Cups</option>
+                        <option value="plates">Clay Plates</option>
+                        <option value="bottles">Clay Bottles</option>
+                        <option value="utensils">Clay Utensils</option>
+                    </select>
+                    <select id="price-filter">
+                        <option value="all">All Prices</option>
+                        <option value="0-500">Under ₹500</option>
+                        <option value="500-1000">₹500 - ₹1000</option>
+                        <option value="1000+">Over ₹1000</option>
+                    </select>
+                    <select id="sort-filter">
+                        <option value="popular">Most Popular</option>
+                        <option value="price-low">Price: Low to High</option>
+                        <option value="price-high">Price: High to Low</option>
+                    </select>
+                </div>
+                <div class="product-grid">
+                    <!-- Featured Teacup Product -->
+                    <div class="product-card featured">
+                        <div class="product-image">
+                            <img src="https://th.bing.com/th/id/OIP.SLqjlu_mtaRyQKtp72iCgwHaIZ?rs=1&pid=ImgDetMain" alt="Traditional Clay Teacup">
+                            <div class="product-overlay">
+                                <button class="quick-view" onclick="showProductDetails('teacup')">Quick View</button>
+                                <button class="add-to-cart">Add to Cart</button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3><a href="#product-teacup" onclick="showProductDetails('teacup')">Traditional Clay Teacup (120ml)</a></h3>
+                            <div class="product-rating">
+                                <span class="stars">★★★★★</span>
+                                <span class="rating-count">(4.8)</span>
+                            </div>
+                            <div class="product-price">
+                                <span class="current-price">₹4</span>
+                                <span class="unit">per cup</span>
+                            </div>
+                            <div class="bulk-pricing">
+                                <h4>Bulk Pricing</h4>
+                                <ul>
+                                    <li>200+ cups: ₹3.40 per cup</li>
+                                    <li>500+ cups: ₹3.00 per cup</li>
+                                </ul>
+                            </div>
+                            <div class="quantity-selector">
+                                <label for="quantity">Quantity:</label>
+                                <div class="quantity-controls">
+                                    <button class="quantity-btn minus" onclick="updateQuantity('minus')">-</button>
+                                    <input type="number" id="quantity" value="1" min="1" onchange="calculatePrice()">
+                                    <button class="quantity-btn plus" onclick="updateQuantity('plus')">+</button>
+                                </div>
+                            </div>
+                            <div class="total-price">
+                                <span>Total Price: </span>
+                                <span id="total-price">₹4</span>
+                            </div>
+                            <p class="product-description">Handcrafted traditional clay teacup with natural cooling properties. Perfect for tea lovers.</p>
+                            <div class="product-meta">
+                                <span class="stock">In Stock</span>
+                                <span class="delivery">Free Delivery</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product Details Modal -->
+                    <div id="product-modal" class="modal">
+                        <div class="modal-content">
+                            <span class="close-modal">&times;</span>
+                            <div class="product-details">
+                                <div class="product-gallery">
+                                    <div class="main-image">
+                                        <img id="product-main-image" src="" alt="Product Image">
+                                    </div>
+                                    <div class="thumbnail-gallery">
+                                        <img src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="View 1">
+                                        <img src="https://images.unsplash.com/photo-1621451537084-482c73073a0f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="View 2">
+                                        <img src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="View 3">
+                                    </div>
+                                </div>
+                                <div class="product-info-details">
+                                    <h2 id="product-title"></h2>
+                                    <div class="product-rating">
+                                        <span class="stars">★★★★★</span>
+                                        <span class="rating-count">(4.8)</span>
+                                    </div>
+                                    <div class="product-price">
+                                        <span class="current-price" id="product-price"></span>
+                                        <span class="unit" id="product-unit"></span>
+                                    </div>
+                                    <div class="product-description">
+                                        <h3>Product Description</h3>
+                                        <p id="product-description"></p>
+                                    </div>
+                                    <div class="product-specifications">
+                                        <h3>Specifications</h3>
+                                        <ul id="product-specs"></ul>
+                                    </div>
+                                    <div class="product-materials">
+                                        <h3>Materials Used</h3>
+                                        <p id="product-materials"></p>
+                                    </div>
+                                    <div class="product-care">
+                                        <h3>Care Instructions</h3>
+                                        <p id="product-care"></p>
+                                    </div>
+                                    <div class="product-actions">
+                                        <div class="quantity-selector">
+                                            <label for="modal-quantity">Quantity:</label>
+                                            <div class="quantity-controls">
+                                                <button class="quantity-btn minus" onclick="updateModalQuantity('minus')">-</button>
+                                                <input type="number" id="modal-quantity" value="1" min="1" onchange="calculateModalPrice()">
+                                                <button class="quantity-btn plus" onclick="updateModalQuantity('plus')">+</button>
+                                            </div>
+                                        </div>
+                                        <div class="total-price">
+                                            <span>Total Price: </span>
+                                            <span id="modal-total-price">₹4</span>
+                                        </div>
+                                        <button class="add-to-cart-large">Add to Cart</button>
+                                        <div class="share-product">
+                                            <h4>Share this product:</h4>
+                                            <div class="share-buttons">
+                                                <button onclick="shareProduct('whatsapp')" class="share-btn whatsapp">
+                                                    <i class="fab fa-whatsapp"></i> WhatsApp
+                                                </button>
+                                                <button onclick="shareProduct('facebook')" class="share-btn facebook">
+                                                    <i class="fab fa-facebook"></i> Facebook
+                                                </button>
+                                                <button onclick="shareProduct('twitter')" class="share-btn twitter">
+                                                    <i class="fab fa-twitter"></i> Twitter
+                                                </button>
+                                                <button onclick="copyProductLink()" class="share-btn copy-link">
+                                                    <i class="fas fa-link"></i> Copy Link
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Other Products -->
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://th.bing.com/th/id/OIP.P6F2lStKrcG4QaaERpprygHaHa?w=1536&h=1536&rs=1&pid=ImgDetMain" alt="Eco-Friendly Plate Set">
+                            <div class="product-overlay">
+                                <button class="quick-view" onclick="showProductDetails('plate-set')">Quick View</button>
+                                <button class="add-to-cart">Add to Cart</button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3>Eco-Friendly Plate Set</h3>
+                            <div class="product-rating">
+                                <span class="stars">★★★★★</span>
+                                <span class="rating-count">(4.9)</span>
+                            </div>
+                            <div class="product-price">
+                                <span class="current-price">₹799</span>
+                                <span class="original-price">₹999</span>
+                                <span class="discount">20% OFF</span>
+                            </div>
+                            <p class="product-description">Set of 6 eco-friendly clay plates with traditional designs.</p>
+                            <div class="product-meta">
+                                <span class="stock">In Stock</span>
+                                <span class="delivery">Free Delivery</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Clay Water Bottle -->
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://www.terracottaworld.co.uk/wp-content/uploads/2021/01/DSC_1014-scaled.jpg" alt="Clay Water Bottle">
+                            <div class="product-overlay">
+                                <button class="quick-view" onclick="showProductDetails('water-bottle')">Quick View</button>
+                                <button class="add-to-cart">Add to Cart</button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3>Clay Water Bottle</h3>
+                            <div class="product-rating">
+                                <span class="stars">★★★★☆</span>
+                                <span class="rating-count">(4.3)</span>
+                            </div>
+                            <div class="product-price">
+                                <span class="current-price">₹599</span>
+                                <span class="original-price">₹699</span>
+                                <span class="discount">15% OFF</span>
+                            </div>
+                            <p class="product-description">Natural clay water bottle with cooling properties.</p>
+                            <div class="product-meta">
+                                <span class="stock">In Stock</span>
+                                <span class="delivery">Free Delivery</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Clay Storage Jar -->
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://st.hzcdn.com/simgs/f1f1e3bf0b370cc6_4-4477/home-design.jpg" alt="Clay Storage Jar">
+                            <div class="product-overlay">
+                                <button class="quick-view" onclick="showProductDetails('storage-jar')">Quick View</button>
+                                <button class="add-to-cart">Add to Cart</button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3>Clay Storage Jar</h3>
+                            <div class="product-rating">
+                                <span class="stars">★★★★☆</span>
+                                <span class="rating-count">(4.4)</span>
+                            </div>
+                            <div class="product-price">
+                                <span class="current-price">₹699</span>
+                                <span class="original-price">₹799</span>
+                                <span class="discount">12% OFF</span>
+                            </div>
+                            <p class="product-description">Traditional clay storage jar for keeping water cool.</p>
+                            <div class="product-meta">
+                                <span class="stock">In Stock</span>
+                                <span class="delivery">Free Delivery</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </section>
+
+        <!-- Deals Section -->
+        <section id="deals" class="section">
+        <div class="container">
+                <h2>Special Deals & Offers</h2>
+                <div class="deals-grid">
+                    <!-- Deal 1: Clay Cups -->
+                    <div class="deal-card">
+                        <div class="discount-badge">20% OFF</div>
+                        <img src="https://th.bing.com/th/id/OIP.SLqjlu_mtaRyQKtp72iCgwHaIZ?rs=1&pid=ImgDetMain" alt="Clay Cups Deal">
+                        <div class="deal-info">
+                            <h3>Buy 2 Get 1 Free</h3>
+                            <p>On all clay cups</p>
+                            <div class="deal-timer">Ends in: 2 days</div>
+                            <button class="shop-now">Shop Now</button>
+                        </div>
+                    </div>
+
+                    <!-- Deal 2: Plate Set -->
+                    <div class="deal-card">
+                        <div class="discount-badge">15% OFF</div>
+                        <img src="https://th.bing.com/th/id/OIP.P6F2lStKrcG4QaaERpprygHaHa?w=1536&h=1536&rs=1&pid=ImgDetMain" alt="Plate Set Deal">
+                        <div class="deal-info">
+                            <h3>Special Bundle Offer</h3>
+                            <p>Plate Set + 2 Cups</p>
+                            <div class="deal-timer">Ends in: 5 days</div>
+                            <button class="shop-now">Shop Now</button>
+                        </div>
+                    </div>
+
+                    <!-- Deal 3: Water Bottle -->
+                    <div class="deal-card">
+                        <div class="discount-badge">25% OFF</div>
+                        <img src="https://www.terracottaworld.co.uk/wp-content/uploads/2021/01/DSC_1014-scaled.jpg" alt="Water Bottle Deal">
+                        <div class="deal-info">
+                            <h3>Flash Sale</h3>
+                            <p>Clay Water Bottle</p>
+                            <div class="deal-timer">Ends in: 1 day</div>
+                            <button class="shop-now">Shop Now</button>
+                        </div>
+                    </div>
+
+                    <!-- Deal 4: Storage Jar -->
+                    <div class="deal-card">
+                        <div class="discount-badge">18% OFF</div>
+                        <img src="https://st.hzcdn.com/simgs/f1f1e3bf0b370cc6_4-4477/home-design.jpg" alt="Storage Jar Deal">
+                        <div class="deal-info">
+                            <h3>Weekend Special</h3>
+                            <p>Clay Storage Jar</p>
+                            <div class="deal-timer">Ends in: 3 days</div>
+                            <button class="shop-now">Shop Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Flash Sales Section -->
+                <div class="flash-sales">
+                    <h3>Flash Sales</h3>
+                    <div class="countdown-timer">
+                        <div class="timer-item">
+                            <span class="timer-number">02</span>
+                            <span class="timer-label">Days</span>
+                        </div>
+                        <div class="timer-item">
+                            <span class="timer-number">12</span>
+                            <span class="timer-label">Hours</span>
+                        </div>
+                        <div class="timer-item">
+                            <span class="timer-number">45</span>
+                            <span class="timer-label">Minutes</span>
+                        </div>
+                        <div class="timer-item">
+                            <span class="timer-number">30</span>
+                            <span class="timer-label">Seconds</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <style>
+            /* Deals Section Styles */
+            .deals-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                gap: 30px;
+                margin: 30px 0;
+            }
+
+            .deal-card {
+                background: white;
+                border-radius: 15px;
+                overflow: hidden;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+                transition: transform 0.3s ease;
+                position: relative;
+            }
+
+            .deal-card:hover {
+                transform: translateY(-5px);
+            }
+
+            .deal-card img {
+                width: 100%;
+                height: 250px;
+                object-fit: cover;
+                transition: transform 0.3s ease;
+            }
+
+            .deal-card:hover img {
+                transform: scale(1.05);
+            }
+
+            .discount-badge {
+                position: absolute;
+                top: 15px;
+                right: 15px;
+                background: #ff4444;
+                color: white;
+                padding: 8px 15px;
+                border-radius: 20px;
+                font-weight: bold;
+                font-size: 1.1em;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            }
+
+            .deal-info {
+                padding: 20px;
+            }
+
+            .deal-info h3 {
+                margin: 0 0 10px 0;
+                color: #333;
+                font-size: 1.3em;
+            }
+
+            .deal-info p {
+                color: #666;
+                margin: 0 0 15px 0;
+            }
+
+            .deal-timer {
+                background: #f8f9fa;
+                padding: 8px 15px;
+                border-radius: 20px;
+                display: inline-block;
+                color: #4CAF50;
+                font-weight: 500;
+                margin-bottom: 15px;
+            }
+
+            .shop-now {
+                width: 100%;
+                padding: 12px;
+                background: #4CAF50;
+                color: white;
+                border: none;
+                border-radius: 8px;
+                font-weight: 600;
+                cursor: pointer;
+                transition: background 0.3s ease;
+            }
+
+            .shop-now:hover {
+                background: #45a049;
+            }
+
+            /* Flash Sales Styles */
+            .flash-sales {
+                margin-top: 50px;
+                text-align: center;
+            }
+
+            .flash-sales h3 {
+                margin-bottom: 30px;
+                color: #333;
+            }
+
+            .countdown-timer {
+                display: flex;
+                justify-content: center;
+                gap: 20px;
+                margin-top: 20px;
+            }
+
+            .timer-item {
+                background: #4CAF50;
+                color: white;
+                padding: 15px 25px;
+                border-radius: 10px;
+                min-width: 80px;
+            }
+
+            .timer-number {
+                display: block;
+                font-size: 2em;
+                font-weight: bold;
+                line-height: 1;
+            }
+
+            .timer-label {
+                font-size: 0.9em;
+                opacity: 0.9;
+            }
+
+            @media (max-width: 768px) {
+                .deals-grid {
+                    grid-template-columns: 1fr;
+                }
+
+                .countdown-timer {
+                    flex-wrap: wrap;
+                }
+
+                .timer-item {
+                    min-width: 60px;
+                    padding: 10px 15px;
+                }
+
+                .timer-number {
+                    font-size: 1.5em;
+                }
+            }
+        </style>
+
+        <!-- About Us Section -->
+        <section id="about" class="section">
+            <div class="container">
+                <h2>About Us</h2>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number">10,000+</div>
+                        <div class="stat-label">Orders Delivered</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">5,000+</div>
+                        <div class="stat-label">Happy Customers</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">200+</div>
+                        <div class="stat-label">Pot Makers</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">98%</div>
+                        <div class="stat-label">Customer Satisfaction</div>
+                    </div>
+                </div>
+                <div class="about-content">
+                    <div class="about-text">
+                        <h3>Our Story</h3>
+                        <p>Clay for Change is dedicated to promoting sustainable living through traditional clay products. We work closely with local artisans to bring you high-quality, eco-friendly alternatives to plastic.</p>
+                    </div>
+                    <div class="about-image">
+                        <img src="about-image.jpg" alt="Our Story">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Help Section -->
+        <section id="help" class="section">
+            <div class="container">
+                <h2>Need Help?</h2>
+                <div class="help-grid">
+                    <div class="help-form">
+                        <h3>Send us a Message</h3>
+                        <form id="help-form" onsubmit="return handleHelpSubmit(event)">
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" id="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="query-type">Query Type</label>
+                                <select id="query-type" required>
+                                    <option value="">Select Query Type</option>
+                                    <option value="order">Order Related</option>
+                                    <option value="product">Product Related</option>
+                                    <option value="technical">Technical Issue</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Your Message</label>
+                                <textarea id="message" rows="5" required></textarea>
+                            </div>
+                            <button type="submit" class="submit-button">Send Message</button>
+            </form>
+                    </div>
+                    <div class="help-info">
+                        <h3>Common Questions</h3>
+                        <div class="faq-list">
+                            <div class="faq-item">
+                                <h4>How do I track my order?</h4>
+                                <p>You can track your order by logging into your account and visiting the Orders section.</p>
+                            </div>
+                            <div class="faq-item">
+                                <h4>What is your return policy?</h4>
+                                <p>We offer a 7-day return policy for all unused products in their original packaging.</p>
+                            </div>
+                            <div class="faq-item">
+                                <h4>How do I contact customer support?</h4>
+                                <p>You can reach our customer support team through the contact form or call us at 1-800-XXX-XXXX.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </section>
+
+        <style>
+            /* About Us Section Styles */
+            .stats-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 30px;
+                margin: 40px 0;
+            }
+
+            .stat-card {
+                background: white;
+                padding: 30px;
+                border-radius: 15px;
+                text-align: center;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+                transition: transform 0.3s ease;
+            }
+
+            .stat-card:hover {
+                transform: translateY(-5px);
+            }
+
+            .stat-number {
+                font-size: 2.5em;
+                font-weight: bold;
+                color: #4CAF50;
+                margin-bottom: 10px;
+            }
+
+            .stat-label {
+                color: #666;
+                font-size: 1.1em;
+            }
+
+            .about-content {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 40px;
+                margin-top: 50px;
+                align-items: center;
+            }
+
+            .about-text h3 {
+                color: #333;
+                margin-bottom: 20px;
+                font-size: 1.8em;
+            }
+
+            .about-text p {
+                color: #666;
+                line-height: 1.8;
+                font-size: 1.1em;
+            }
+
+            .about-image img {
+                width: 100%;
+                border-radius: 15px;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            }
+
+            /* Help Section Styles */
+            .help-grid {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 40px;
+                margin-top: 30px;
+            }
+
+            .help-form {
+                background: white;
+                padding: 30px;
+                border-radius: 15px;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            }
+
+            .help-form h3 {
+                color: #333;
+                margin-bottom: 25px;
+                font-size: 1.8em;
+            }
+
+            .help-form .form-group {
+                margin-bottom: 20px;
+            }
+
+            .help-form label {
+                display: block;
+                margin-bottom: 8px;
+                color: #555;
+                font-weight: 500;
+            }
+
+            .help-form input,
+            .help-form select,
+            .help-form textarea {
+                width: 100%;
+                padding: 12px;
+                border: 1px solid #ddd;
+                border-radius: 8px;
+                font-size: 1em;
+                transition: border-color 0.3s ease;
+            }
+
+            .help-form input:focus,
+            .help-form select:focus,
+            .help-form textarea:focus {
+                border-color: #4CAF50;
+                outline: none;
+                box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.1);
+            }
+
+            .submit-button {
+                background: #4CAF50;
+                color: white;
+                padding: 12px 30px;
+                border: none;
+                border-radius: 8px;
+                font-size: 1.1em;
+                font-weight: 600;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                width: 100%;
+            }
+
+            .submit-button:hover {
+                background: #45a049;
+                transform: translateY(-2px);
+            }
+
+            .help-info {
+                background: white;
+                padding: 30px;
+                border-radius: 15px;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            }
+
+            .help-info h3 {
+                color: #333;
+                margin-bottom: 25px;
+                font-size: 1.8em;
+            }
+
+            .faq-list {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .faq-item {
+                background: #f8f9fa;
+                padding: 20px;
+                border-radius: 10px;
+                transition: transform 0.3s ease;
+            }
+
+            .faq-item:hover {
+                transform: translateX(5px);
+            }
+
+            .faq-item h4 {
+                color: #333;
+                margin-bottom: 10px;
+                font-size: 1.2em;
+            }
+
+            .faq-item p {
+                color: #666;
+                line-height: 1.6;
+            }
+
+            @media (max-width: 768px) {
+                .stats-grid {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+
+                .about-content,
+                .help-grid {
+                    grid-template-columns: 1fr;
+                }
+
+                .stat-card {
+                    padding: 20px;
+                }
+
+                .stat-number {
+                    font-size: 2em;
+                }
+            }
+
+            @media (max-width: 480px) {
+                .stats-grid {
+                    grid-template-columns: 1fr;
+                }
+            }
+        </style>
+
+        <footer class="ecommerce-footer">
+        <div class="container">
+                <div class="footer-content">
+                    <div class="footer-section">
+                        <h3>About Us</h3>
+                        <p>Clay for Change is dedicated to promoting sustainable living through traditional clay products.</p>
+                    </div>
+                    <div class="footer-section">
+                        <h3>Customer Service</h3>
+                        <ul>
+                            <li><a href="#contact">Contact Us</a></li>
+                            <li><a href="#shipping">Shipping Info</a></li>
+                            <li><a href="#returns">Returns</a></li>
+                            <li><a href="#faq">FAQ</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h3>Connect With Us</h3>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-facebook"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+            <p>&copy; 2023 Clay for Change. All rights reserved.</p>
+                </div>
+        </div>
+    </footer>
+    </div>
+
+    <!-- Next Button -->
+    <button class="next-button" onclick="nextTransition(currentSection)">Next →</button>
+
+    <script>
+        let currentSection = 1;
+        const totalSections = 3;
+        const transitionDuration = 500; // 0.5 seconds
+        let transitionInterval;
+        let isTransitioning = false;
+        let isFormActive = false;
+
+        function startAutomaticTransitions() {
+            if (transitionInterval) {
+                clearInterval(transitionInterval);
+            }
+
+            transitionInterval = setInterval(() => {
+                if (!isTransitioning && !isFormActive) {
+                    nextTransition(currentSection);
+                }
+            }, 6000);
+        }
+
+        // Stop transitions when user interacts with forms
+        function stopTransitions() {
+            isFormActive = true;
+            if (transitionInterval) {
+                clearInterval(transitionInterval);
+            }
+        }
+
+        // Resume transitions when user leaves forms
+        function resumeTransitions() {
+            isFormActive = false;
+            startAutomaticTransitions();
+        }
+
+        // Add event listeners to all form inputs
+        document.addEventListener('DOMContentLoaded', function() {
+            const formInputs = document.querySelectorAll('form input');
+            formInputs.forEach(input => {
+                input.addEventListener('focus', stopTransitions);
+                input.addEventListener('blur', resumeTransitions);
+            });
+        });
+
+        function nextTransition(current) {
+            if (isTransitioning) return;
+            isTransitioning = true;
+
+            const currentSectionElement = document.querySelector('.transition-section.active');
+            currentSectionElement.style.transform = 'translateX(-100%)';
+            currentSectionElement.style.opacity = '0';
+            
+            setTimeout(() => {
+                document.querySelectorAll('.transition-section').forEach(section => {
+                    section.classList.remove('active');
+                });
+                
+                currentSection = (currentSection % totalSections) + 1;
+                
+                if (currentSection === 1) {
+                    document.getElementById('info').classList.add('active');
+                } else if (currentSection === 2) {
+                    document.getElementById('causes').classList.add('active');
+                } else if (currentSection === 3) {
+                    document.getElementById('login').classList.add('active');
+                }
+
+                setTimeout(() => {
+                    isTransitioning = false;
+                }, transitionDuration);
+            }, transitionDuration);
+        }
+
+        function switchTab(type) {
+            document.querySelectorAll('.login-tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            if (type === 'customer') {
+                document.getElementById('customer-login').style.display = 'block';
+                document.getElementById('customer-register').style.display = 'none';
+                document.getElementById('admin-login').style.display = 'none';
+                document.querySelectorAll('.login-tab')[0].classList.add('active');
+            } else if (type === 'admin') {
+                document.getElementById('customer-login').style.display = 'none';
+                document.getElementById('customer-register').style.display = 'none';
+                document.getElementById('admin-login').style.display = 'block';
+                document.querySelectorAll('.login-tab')[1].classList.add('active');
+            }
+        }
+
+        function showRegister(type) {
+            document.getElementById('customer-login').style.display = 'none';
+            document.getElementById('customer-register').style.display = 'block';
+            document.getElementById('admin-login').style.display = 'none';
+        }
+
+        function showLogin(type) {
+            document.getElementById('customer-login').style.display = 'block';
+            document.getElementById('customer-register').style.display = 'none';
+            document.getElementById('admin-login').style.display = 'none';
+        }
+
+        function handleLogin(type) {
+            // Add your login logic here
+            document.getElementById('login').style.display = 'none';
+            document.getElementById('main-content').style.display = 'block';
+            return false;
+        }
+
+        function handleRegister(event) {
+            event.preventDefault();
+            // Add your registration logic here
+            alert('Registration successful! Please login.');
+            showLogin('customer');
+            return false;
+        }
+
+        // Start automatic transitions when the page loads
+        window.addEventListener('load', startAutomaticTransitions);
+
+        // Pause automatic transitions when hovering over the next button
+        document.querySelector('.next-button').addEventListener('mouseenter', () => {
+            clearInterval(transitionInterval);
+        });
+
+        // Resume automatic transitions when mouse leaves the next button
+        document.querySelector('.next-button').addEventListener('mouseleave', () => {
+            startAutomaticTransitions();
+        });
+
+        // Ensure transitions continue even after login form interaction
+        document.querySelectorAll('form').forEach(form => {
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                // Your login logic here
+                // The transitions will continue in the background
+            });
+        });
+
+        // Restart transitions if they somehow stop
+        setInterval(() => {
+            if (!document.querySelector('.transition-section.active')) {
+                startAutomaticTransitions();
+            }
+        }, 1000);
+
+        function showSection(sectionId) {
+            // Hide all sections
+            document.querySelectorAll('.section').forEach(section => {
+                section.classList.remove('active');
+            });
+
+            // Show selected section
+            document.getElementById(sectionId).classList.add('active');
+
+            // Update URL hash without scrolling
+            history.pushState(null, null, `#${sectionId}`);
+        }
+
+        function handleHelpSubmit(event) {
+            event.preventDefault();
+            // Add your form submission logic here
+            alert('Thank you for your message. We will get back to you soon!');
+            event.target.reset();
+            return false;
+        }
+
+        // Show home section by default
+        window.addEventListener('load', () => {
+            showSection('home');
+        });
+
+        function updateQuantity(action) {
+            const input = document.getElementById('quantity');
+            let value = parseInt(input.value);
+            
+            if (action === 'plus') {
+                value++;
+            } else if (action === 'minus' && value > 1) {
+                value--;
+            }
+            
+            input.value = value;
+            calculatePrice();
+        }
+
+        function calculatePrice() {
+            const quantity = parseInt(document.getElementById('quantity').value);
+            let price = 4; // Default price
+
+            if (quantity >= 500) {
+                price = 3;
+            } else if (quantity >= 200) {
+                price = 3.4;
+            }
+
+            const total = quantity * price;
+            document.getElementById('total-price').textContent = `₹${total.toFixed(2)}`;
+        }
+
+        // Initialize price calculation
+        document.addEventListener('DOMContentLoaded', calculatePrice);
+
+        // Product Data
+        const products = {
+            teacup: {
+                title: "Traditional Clay Teacup (120ml)",
+                price: 4,
+                unit: "per cup",
+                description: "Handcrafted traditional clay teacup with natural cooling properties. Perfect for tea lovers.",
+                specifications: [
+                    "Capacity: 120ml",
+                    "Material: Natural Clay",
+                    "Finish: Traditional Handcrafted",
+                    "Color: Natural Terracotta",
+                    "Weight: 150g per cup"
+                ],
+                materials: "Made from high-quality natural clay sourced from traditional potter communities. The clay is carefully selected for its thermal properties and durability.",
+                care: "To maintain the quality of your clay teacup:\n1. Wash with warm water and mild soap\n2. Avoid using harsh detergents\n3. Dry naturally in the sun\n4. Store in a cool, dry place",
+                images: [
+                    "https://th.bing.com/th/id/OIP.SLqjlu_mtaRyQKtp72iCgwHaIZ?rs=1&pid=ImgDetMain",
+                    "https://th.bing.com/th/id/OIP.P6F2lStKrcG4QaaERpprygHaHa?w=1536&h=1536&rs=1&pid=ImgDetMain",
+                    "https://www.terracottaworld.co.uk/wp-content/uploads/2021/01/DSC_1014-scaled.jpg"
+                ]
+            },
+            'plate-set': {
+                title: "Eco-Friendly Clay Plate Set",
+                price: 799,
+                unit: "per set",
+                description: "Set of 6 eco-friendly clay plates with traditional designs. Perfect for daily use and special occasions.",
+                specifications: [
+                    "Set of 6 plates",
+                    "Diameter: 8 inches each",
+                    "Material: Natural Clay",
+                    "Finish: Traditional Handcrafted",
+                    "Color: Natural Terracotta"
+                ],
+                materials: "Crafted from premium quality clay, each plate is handcrafted by skilled artisans using traditional techniques.",
+                care: "Care Instructions:\n1. Hand wash with mild soap\n2. Avoid microwave use\n3. Dry naturally\n4. Store in a cool, dry place",
+                images: [
+                    "https://th.bing.com/th/id/OIP.P6F2lStKrcG4QaaERpprygHaHa?w=1536&h=1536&rs=1&pid=ImgDetMain",
+                    "https://th.bing.com/th/id/OIP.SLqjlu_mtaRyQKtp72iCgwHaIZ?rs=1&pid=ImgDetMain",
+                    "https://www.terracottaworld.co.uk/wp-content/uploads/2021/01/DSC_1014-scaled.jpg"
+                ]
+            },
+            'water-bottle': {
+                title: "Natural Clay Water Bottle",
+                price: 599,
+                unit: "per bottle",
+                description: "Traditional clay water bottle with natural cooling properties. Keeps water cool naturally.",
+                specifications: [
+                    "Capacity: 1.5L",
+                    "Material: Natural Clay",
+                    "Finish: Traditional Handcrafted",
+                    "Color: Natural Terracotta",
+                    "Weight: 800g"
+                ],
+                materials: "Made from specially selected clay that has natural cooling properties. Each bottle is handcrafted by skilled artisans.",
+                care: "Care Instructions:\n1. Clean with warm water\n2. Avoid harsh detergents\n3. Dry naturally\n4. Store in a cool place",
+                images: [
+                    "https://www.terracottaworld.co.uk/wp-content/uploads/2021/01/DSC_1014-scaled.jpg",
+                    "https://th.bing.com/th/id/OIP.SLqjlu_mtaRyQKtp72iCgwHaIZ?rs=1&pid=ImgDetMain",
+                    "https://st.hzcdn.com/simgs/f1f1e3bf0b370cc6_4-4477/home-design.jpg"
+                ]
+            }
+            // Add more products as needed
+        };
+
+        function showProductDetails(productId) {
+            const product = products[productId];
+            const modal = document.getElementById('product-modal');
+            const mainImage = document.getElementById('product-main-image');
+            const title = document.getElementById('product-title');
+            const price = document.getElementById('product-price');
+            const unit = document.getElementById('product-unit');
+            const description = document.getElementById('product-description');
+            const specs = document.getElementById('product-specs');
+            const materials = document.getElementById('product-materials');
+            const care = document.getElementById('product-care');
+
+            // Update modal content
+            mainImage.src = product.images[0];
+            title.textContent = product.title;
+            price.textContent = `₹${product.price}`;
+            unit.textContent = product.unit;
+            description.textContent = product.description;
+            materials.textContent = product.materials;
+            care.textContent = product.care;
+
+            // Update specifications
+            specs.innerHTML = product.specifications.map(spec => `<li>${spec}</li>`).join('');
+
+            // Show modal
+            modal.style.display = 'block';
+        }
+
+        function closeModal() {
+            document.getElementById('product-modal').style.display = 'none';
+        }
+
+        function updateModalQuantity(action) {
+            const input = document.getElementById('modal-quantity');
+            let value = parseInt(input.value);
+            
+            if (action === 'plus') {
+                value++;
+            } else if (action === 'minus' && value > 1) {
+                value--;
+            }
+            
+            input.value = value;
+            calculateModalPrice();
+        }
+
+        function calculateModalPrice() {
+            const quantity = parseInt(document.getElementById('modal-quantity').value);
+            let price = 4; // Default price
+
+            if (quantity >= 500) {
+                price = 3;
+            } else if (quantity >= 200) {
+                price = 3.4;
+            }
+
+            const total = quantity * price;
+            document.getElementById('modal-total-price').textContent = `₹${total.toFixed(2)}`;
+        }
+
+        function shareProduct(platform) {
+            const productUrl = window.location.href;
+            const productTitle = document.getElementById('product-title').textContent;
+            let shareUrl;
+
+            switch(platform) {
+                case 'whatsapp':
+                    shareUrl = `https://wa.me/?text=${encodeURIComponent(productTitle + ' ' + productUrl)}`;
+                    break;
+                case 'facebook':
+                    shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(productUrl)}`;
+                    break;
+                case 'twitter':
+                    shareUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(productTitle)}&url=${encodeURIComponent(productUrl)}`;
+                    break;
+            }
+
+            window.open(shareUrl, '_blank', 'width=600,height=400');
+        }
+
+        function copyProductLink() {
+            const productUrl = window.location.href;
+            navigator.clipboard.writeText(productUrl).then(() => {
+                alert('Product link copied to clipboard!');
+            });
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('product-modal');
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+
+        // Close modal when clicking close button
+        document.querySelector('.close-modal').onclick = closeModal;
+
+        // User data management
+        let currentUser = null;
+
+        // Enhanced Login Form Handling
+        document.addEventListener('DOMContentLoaded', function() {
+            const loginForm = document.querySelector('.login-form');
+            const loginButton = document.querySelector('.login-button');
+            const errorMessage = document.querySelector('.error-message');
+
+            // Check if user is already logged in
+            const savedUser = localStorage.getItem('currentUser');
+            if (savedUser) {
+                currentUser = JSON.parse(savedUser);
+                updateProfileDisplay();
+            }
+
+            loginForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Show loading state
+                loginButton.classList.add('loading');
+                loginButton.textContent = 'Logging in...';
+                errorMessage.style.display = 'none';
+
+                // Simulate API call
+                setTimeout(() => {
+                    const email = document.querySelector('input[type="email"]').value;
+                    const password = document.querySelector('input[type="password"]').value;
+
+                    // Basic validation
+                    if (!email || !password) {
+                        showError('Please fill in all fields');
+                        return;
+                    }
+
+                    // Simulate successful login with user data
+                    currentUser = {
+                        name: 'John Doe', // This would come from your backend
+                        email: email,
+                        phone: '+91 98765 43210',
+                        address: '123 Clay Street, Pottery Town, India',
+                        orders: [
+                            {
+                                id: 'ORD001',
+                                date: '2024-03-15',
+                                items: [
+                                    {
+                                        name: 'Traditional Clay Teacup',
+                                        quantity: 2,
+                                        price: 4.00
+                                    }
+                                ],
+                                total: 8.00,
+                                status: 'Delivered'
+                            }
+                        ],
+                        addresses: [
+                            {
+                                type: 'Home',
+                                street: '123 Clay Street',
+                                city: 'Pottery Town',
+                                state: 'Gujarat',
+                                pincode: '380001',
+                                isDefault: true
+                            }
+                        ]
+                    };
+
+                    // Save user data to localStorage
+                    localStorage.setItem('currentUser', JSON.stringify(currentUser));
+                    
+                    // Update UI
+                    loginButton.classList.remove('loading');
+                    loginButton.textContent = 'Login Successful!';
+                    
+                    // Update profile display
+                    updateProfileDisplay();
+                    
+                    // Show home section after successful login
+                    setTimeout(() => {
+                        showSection('home');
+                    }, 1000);
+                }, 1500);
+            });
+
+            function showError(message) {
+                errorMessage.textContent = message;
+                errorMessage.style.display = 'block';
+                loginButton.classList.remove('loading');
+                loginButton.textContent = 'Login';
+            }
+
+            // Add input focus effects
+            const inputs = document.querySelectorAll('.form-group input');
+            inputs.forEach(input => {
+                input.addEventListener('focus', function() {
+                    this.parentElement.classList.add('focused');
+                });
+
+                input.addEventListener('blur', function() {
+                    if (!this.value) {
+                        this.parentElement.classList.remove('focused');
+                    }
+                });
+            });
+        });
+
+        // Function to update profile display
+        function updateProfileDisplay() {
+            if (!currentUser) return;
+
+            // Update profile header
+            document.querySelector('.profile-header h2').textContent = currentUser.name;
+            document.querySelector('.profile-header p').textContent = currentUser.email;
+
+            // Update personal details form
+            document.getElementById('profile-name').value = currentUser.name;
+            document.getElementById('profile-email').value = currentUser.email;
+            document.getElementById('profile-phone').value = currentUser.phone;
+
+            // Update order history
+            const orderList = document.querySelector('.order-list');
+            orderList.innerHTML = '';
+            currentUser.orders.forEach(order => {
+                const orderElement = document.createElement('div');
+                orderElement.className = 'order-item';
+                orderElement.innerHTML = `
+                    <div class="order-header">
+                        <h3>Order #${order.id}</h3>
+                        <span class="order-date">${formatDate(order.date)}</span>
+                    </div>
+                    <div class="order-items">
+                        ${order.items.map(item => `
+                            <div class="order-product">
+                                <span>${item.name}</span>
+                                <span>${item.quantity}x</span>
+                                <span>₹${item.price.toFixed(2)}</span>
+                            </div>
+                        `).join('')}
+                    </div>
+                    <div class="order-footer">
+                        <span class="order-total">Total: ₹${order.total.toFixed(2)}</span>
+                        <span class="order-status ${order.status.toLowerCase()}">${order.status}</span>
+                    </div>
+                `;
+                orderList.appendChild(orderElement);
+            });
+
+            // Update addresses
+            const addressList = document.querySelector('.address-list');
+            addressList.innerHTML = '';
+            currentUser.addresses.forEach(address => {
+                const addressElement = document.createElement('div');
+                addressElement.className = 'address-item';
+                addressElement.innerHTML = `
+                    <div class="address-header">
+                        <h3>${address.type}</h3>
+                        ${address.isDefault ? '<span class="default-badge">Default</span>' : ''}
+                    </div>
+                    <p>${address.street}</p>
+                    <p>${address.city}, ${address.state} ${address.pincode}</p>
+                    <div class="address-actions">
+                        <button class="edit-address">Edit</button>
+                        ${!address.isDefault ? '<button class="delete-address">Delete</button>' : ''}
+                    </div>
+                `;
+                addressList.appendChild(addressElement);
+            });
+        }
+
+        // Helper function to format date
+        function formatDate(dateString) {
+            const options = { year: 'numeric', month: 'long', day: 'numeric' };
+            return new Date(dateString).toLocaleDateString('en-US', options);
+        }
+
+        // Handle profile form submission
+        document.querySelector('.profile-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            if (!currentUser) return;
+
+            // Update user data
+            currentUser.name = document.getElementById('profile-name').value;
+            currentUser.email = document.getElementById('profile-email').value;
+            currentUser.phone = document.getElementById('profile-phone').value;
+
+            // Save to localStorage
+            localStorage.setItem('currentUser', JSON.stringify(currentUser));
+
+            // Show success message
+            alert('Profile updated successfully!');
+        });
+
+        // Handle logout
+        document.querySelector('.logout-button').addEventListener('click', function() {
+            currentUser = null;
+            localStorage.removeItem('currentUser');
+            showSection('login');
+        });
+    </script>
+</body>
+</html>
